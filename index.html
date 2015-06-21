@@ -37,9 +37,9 @@
               <a href="#/register">create an account</a>
               <span>?</span>
             </div>
-            <div class="alert alert-danger" ng-show="errors.unknown">An unkown error has occurred</div>
+            <div class="alert alert-danger" ng-show="errors.unknown">An unknown error has occurred</div>
             <div class="alert alert-danger" ng-show="errors.userMessage">
-              <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+              <strong>Sorry, an error occurred.  Please reload the page and try again.</strong>
               <br/>
               <br/>
               <p>{{errors.userMessage}}</p>
@@ -93,7 +93,7 @@
             </div>
             <form class="registration-form form-horizontal sp-form" role="form" ng-controller="RegistrationFormCtrl" ng-submit="submit()">
               <div class="alert alert-danger" ng-show="unknownError">
-                <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+                <strong>Sorry, an error occurred.  Please reload the page and try again.</strong>
                 <br/>
                 <br/>
                 <p>{{unknownError}}</p>
@@ -177,7 +177,7 @@
                 </div>
               </div>
               <div class="alert alert-danger" ng-show="unknownError">
-                <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+                <strong>Sorry, an error occurred.  Please reload the page and try again.</strong>
                 <br/>
                 <br/>
                 <p>{{unknownError}}</p>
@@ -196,7 +196,7 @@
             <div class="header">
               <span ng-show="status=='verified'">Password Reset</span>
               <span ng-show="status=='failed'">Sorry! Something went wrong.</span>
-              <span ng-show="status=='success'">Your have successfully changed your password</span>
+              <span ng-show="status=='success'">You have successfully changed your password</span>
             </div>
             <div ng-show="status=='failed'">
               <p>
@@ -234,7 +234,7 @@
                 </div>
               </div>
               <div class="alert alert-danger" ng-show="unknownError">
-                <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+                <strong>Sorry, an error occurred.  Please reload the page and try again.</strong>
                 <br/>
                 <br/>
                 <p>{{unknownError}}</p>
