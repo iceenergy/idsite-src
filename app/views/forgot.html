@@ -21,8 +21,9 @@
           <label class="col-sm-6" ng-hide="retry">Send password reset instructions to:</label>
           <label class="col-sm-6" ng-show="retry">Send new password reset email to:</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" name="email" form-control email-validation validate-on-blur/>
-            <small class="help-block wd-invalid-email" ng-show="validationError">Invalid email address</small>
+            <input id="forgotemail" type="text" class="form-control" name="email" form-control email-validation validate-on-blur/>
+            <small class="help-block wd-invalid-email" ng-show="errors.badEmailAddress">Invalid email address</small>
+            <small class="help-block wd-invalid-email" ng-show="errors.adUser">Reset the password in Active Directory</small>
             <small class="help-block wd-not-found" ng-show="notFound"><span>Account does not exist.</span></small>
           </div>
         </div>

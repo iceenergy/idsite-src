@@ -22,11 +22,14 @@ angular.module('stormpathIdpApp')
             if(err.status===409){
               $scope.fields.email.setError('duplicateUser', true);
             }else{
-              $scope.unknownError = String(err.userMessage || err.developerMessage || err);
+              $scope.unknownError = err.status;
             }
           }
         });
       }
     };
 
+	window.setTimeout(function() {
+		document.getElementById("givenName").focus();
+	}, 0);
   });

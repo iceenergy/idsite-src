@@ -131,5 +131,8 @@ angular.module('stormpathIdpApp')
       }
     };
 
+	window.setTimeout(function() {
+		document.getElementById("username").focus();
+	}, 0);
     return $scope;
   });

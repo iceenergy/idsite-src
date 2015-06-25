@@ -20,14 +20,17 @@ angular.module('stormpathIdpApp')
       }
       Stormpath.sendPasswordResetEmail($scope.fields.email.value.trim(),function(err){
         if(err){
-          if(err.status===404){
+          if(err.status===404 || err.status===401 || err.status===400){
             $scope.notFound = true;
           }else{
-            $scope.unknownError = String(err);
+            $scope.unknownError = err.status;
           }
         }else{
           $scope.sent = true;
         }
       });
     };
+	window.setTimeout(function() {
+		document.getElementById("forgotemail").focus();
+	}, 0);
   });
