@@ -12,6 +12,7 @@ angular.module('stormpathIdpApp')
     });
     $scope.submit = function(){
       $scope.notFound = false;
+      $scope.adError = false;
       var inError = Object.keys($scope.fields).filter(function(f){
         return $scope.fields[f].validate();
       });
@@ -20,10 +21,10 @@ angular.module('stormpathIdpApp')
       }
       Stormpath.sendPasswordResetEmail($scope.fields.email.value.trim(),function(err){
         if(err){
-          if(err.status===404 || err.status===401 || err.status===400){
-            $scope.notFound = true;
+          if(err.status===400){
+			$scope.adError = true;
           }else{
-            $scope.unknownError = err.status;
+            $scope.unknownError = err.status + ":" + err.message;
           }
         }else{
           $scope.sent = true;
